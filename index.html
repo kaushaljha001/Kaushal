@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quiz App</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+    padding:20px;
+}
+
+.quiz-container{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    max-width:700px;
+    margin:auto;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+}
+
+.question{
+    margin-bottom:15px;
+}
+
+button{
+    padding:10px 20px;
+    font-size:16px;
+    background:#007BFF;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+.result{
+    margin-top:20px;
+    font-size:20px;
+    font-weight:bold;
+    text-align:center;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="quiz-container">
+
+<h1>General Quiz</h1>
+
+<form id="quizForm">
+
+<div class="question">
+<p>1. What is the capital of India?</p>
+<input type="radio" name="q1" value="a"> Mumbai<br>
+<input type="radio" name="q1" value="b"> Delhi<br>
+<input type="radio" name="q1" value="c"> Kolkata<br>
+</div>
+
+<div class="question">
+<p>2. HTML stands for?</p>
+<input type="radio" name="q2" value="a"> Hyper Text Markup Language<br>
+<input type="radio" name="q2" value="b"> High Text Machine Language<br>
+<input type="radio" name="q2" value="c"> Hyper Transfer Markup Language<br>
+</div>
+
+<div class="question">
+<p>3. CSS is used for?</p>
+<input type="radio" name="q3" value="a"> Styling<br>
+<input type="radio" name="q3" value="b"> Database<br>
+<input type="radio" name="q3" value="c"> Programming<br>
+</div>
+
+<div class="question">
+<p>4. JavaScript is mainly used for?</p>
+<input type="radio" name="q4" value="a"> Web interactivity<br>
+<input type="radio" name="q4" value="b"> Cooking<br>
+<input type="radio" name="q4" value="c"> Painting<br>
+</div>
+
+<div class="question">
+<p>5. Which is a programming language?</p>
+<input type="radio" name="q5" value="a"> Python<br>
+<input type="radio" name="q5" value="b"> HTML<br>
+<input type="radio" name="q5" value="c"> CSS<br>
+</div>
+
+<div class="question">
+<p>6. 5 + 3 = ?</p>
+<input type="radio" name="q6" value="a"> 6<br>
+<input type="radio" name="q6" value="b"> 8<br>
+<input type="radio" name="q6" value="c"> 10<br>
+</div>
+
+<div class="question">
+<p>7. Which planet is known as Red Planet?</p>
+<input type="radio" name="q7" value="a"> Mars<br>
+<input type="radio" name="q7" value="b"> Earth<br>
+<input type="radio" name="q7" value="c"> Venus<br>
+</div>
+
+<div class="question">
+<p>8. Which tag is used for images in HTML?</p>
+<input type="radio" name="q8" value="a"> img<br>
+<input type="radio" name="q8" value="b"> image<br>
+<input type="radio" name="q8" value="c"> src<br>
+</div>
+
+<div class="question">
+<p>9. 10 / 2 = ?</p>
+<input type="radio" name="q9" value="a"> 2<br>
+<input type="radio" name="q9" value="b"> 5<br>
+<input type="radio" name="q9" value="c"> 8<br>
+</div>
+
+<div class="question">
+<p>10. Which device is used to input text?</p>
+<input type="radio" name="q10" value="a"> Monitor<br>
+<input type="radio" name="q10" value="b"> Keyboard<br>
+<input type="radio" name="q10" value="c"> Printer<br>
+</div>
+
+<div class="question">
+<p>11. Which language runs in browser?</p>
+<input type="radio" name="q11" value="a"> JavaScript<br>
+<input type="radio" name="q11" value="b"> C<br>
+<input type="radio" name="q11" value="c"> Java<br>
+</div>
+
+<div class="question">
+<p>12. Which is not a web browser?</p>
+<input type="radio" name="q12" value="a"> Chrome<br>
+<input type="radio" name="q12" value="b"> Firefox<br>
+<input type="radio" name="q12" value="c"> Linux<br>
+</div>
+
+<div class="question">
+<p>13. CPU stands for?</p>
+<input type="radio" name="q13" value="a"> Central Processing Unit<br>
+<input type="radio" name="q13" value="b"> Computer Personal Unit<br>
+<input type="radio" name="q13" value="c"> Control Power Unit<br>
+</div>
+
+<div class="question">
+<p>14. Which is used for database?</p>
+<input type="radio" name="q14" value="a"> MySQL<br>
+<input type="radio" name="q14" value="b"> HTML<br>
+<input type="radio" name="q14" value="c"> CSS<br>
+</div>
+
+<div class="question">
+<p>15. 7 x 2 = ?</p>
+<input type="radio" name="q15" value="a"> 14<br>
+<input type="radio" name="q15" value="b"> 12<br>
+<input type="radio" name="q15" value="c"> 16<br>
+</div>
+
+<br>
+
+<button type="button" onclick="checkQuiz()">Submit Quiz</button>
+
+</form>
+
+<div class="result" id="result"></div>
+
+</div>
+
+<script>
+
+function checkQuiz(){
+
+let answers = {
+q1:"b",
+q2:"a",
+q3:"a",
+q4:"a",
+q5:"a",
+q6:"b",
+q7:"a",
+q8:"a",
+q9:"b",
+q10:"b",
+q11:"a",
+q12:"c",
+q13:"a",
+q14:"a",
+q15:"a"
+};
+
+let score = 0;
+
+for(let q in answers){
+
+let options = document.getElementsByName(q);
+
+for(let option of options){
+
+if(option.checked && option.value === answers[q]){
+score++;
+}
+
+}
+
+}
+
+let percentage = (score/15)*100;
+
+document.getElementById("result").innerHTML =
+"Correct Answers: " + score + "/15 <br>" +
+"Marks: " + score + "<br>" +
+"Percentage: " + percentage.toFixed(2) + "%";
+
+}
+
+</script>
+
+</body>
+</html>
